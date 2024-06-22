@@ -1,1 +1,2 @@
-# chat-app-gemini-streamlit-vertexai-googleapi
+# chat-app-streamlit-vertexai-gemini-googleapi
+ 
