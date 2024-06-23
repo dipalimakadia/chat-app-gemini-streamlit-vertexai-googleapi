@@ -1,8 +1,15 @@
+import os
+from dotenv import load_dotenv
 import vertexai
 import streamlit as st;
 from vertexai.preview import generative_models
 from vertexai.preview.generative_models import GenerativeModel, Part, Content, ChatSession
 
+load_dotenv()
+
+# Ensure the environment variables are set
+assert 'GOOGLE_API_KEY' in os.environ, "GOOGLE_API_KEY not found in environment variables"
+assert 'GOOGLE_APPLICATION_CREDENTIALS' in os.environ, "GOOGLE_APPLICATION_CREDENTIALS not found in environment variables"
 
 project= "sample-gemini-427119"
 vertexai.init(project=project)
@@ -59,7 +66,7 @@ for index, message in enumerate(st.session_state.messages):
 #Rex
 if len(st.session_state.messages) == 0:
     initial_prompt = "Introduce yourself as ReX, an assistant powered by Google Gemini. You use emojis to be interactive"
-    llm_function(chat, initial_prompt)
+    llm_function(chat, initial_prompt) #llm_function to interact with the chat model, passing initial_prompt as the user query to start the conversation
 
     
 # For capture user input
