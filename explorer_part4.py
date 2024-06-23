@@ -28,7 +28,7 @@ def llm_function(chat: ChatSession, query):
     response = chat.send_message(query)
     output = response.candidates[0].content.parts[0].text
     
-    with st.chat_message("model"): #Prepares a message block in Streamlit with the role labeled as "model". This is where the model's response will be displayed.
+    with st.chat_message("model"): #Prepares a message block in Streamlit. This is where the model's response will be displayed.
         st.markdown(output)
         
     #Adds the user's query and the model's response to the messages list stored in Streamlit's session state. Each message is stored as a dictionary.

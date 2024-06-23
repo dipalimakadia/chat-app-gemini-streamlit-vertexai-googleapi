@@ -51,16 +51,11 @@ if "messages" not in st.session_state:
     
 #Display and Load chat history
 for index, message in enumerate(st.session_state.messages):
-    # content = Content(
-    #     role = message["role"],
-    #     parts = [Part.from_text(message["content"])]
-    # )
     
     if index != 0:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    
-    # chat.history.append(content)
+
 
 # For Intialize message startup
 #Rex
